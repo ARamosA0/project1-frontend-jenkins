@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         VERCEL_TOKEN = credentials('vercel_token')
-        VERCEL_PROJECT = prj_A6fLDaRL7JVVxuU9hXZXyW2PI6nM
+        VERCEL_PROJECT = 'prj_A6fLDaRL7JVVxuU9hXZXyW2PI6nM'
     }
   
     stages {
