@@ -34,8 +34,7 @@ pipeline {
                 echo 'Deploy en vercel ...'
                 
                 sh '''
-                npx vercel --token \$VERCEL_TOKEN --yes --prod \
-                --project \$VERCEL_PROJECT
+                npx vercel --token \$VERCEL_TOKEN --yes --prod 
                 '''
             }
         }
