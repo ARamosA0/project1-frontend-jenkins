@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent { 
+        docker { 
+            image 'node:18'
+            args '-u root'
+        } 
+    }
 
     environment {
         VERCEL_TOKEN = credentials('vercel_token')
@@ -8,7 +13,7 @@ pipeline {
   
     stages {
         stage('Instalar dependencias ...') {
-            
+
             steps {
                 echo 'Instalando dependencias'
                 sh 'npm install'
@@ -16,7 +21,7 @@ pipeline {
         }
 
         stage('Ejecutar pruebas unitarias') {
-            
+
             steps {
                 echo 'Ejecutando tests'
                 sh 'npm test || true'
